@@ -27,8 +27,6 @@ class User:
             avg += rating
         return avg / len(self.books.values())
 
-
-
 class Book:
     def __init__(self, title, isbn):
         self.title = title
@@ -68,7 +66,6 @@ class Book:
     def __repr__(self):
         return self.title
 
-
 class Fiction(Book):
     def __init__(self, title, author, isbn):
         super().__init__(title, isbn)
@@ -79,7 +76,6 @@ class Fiction(Book):
 
     def __repr__(self):
         return "{title} by {author}".format(title=self.title, author = self.author)
-
 
 class Non_Fiction(Book):
     def __init__(self, title, subject, level, isbn):
@@ -95,7 +91,6 @@ class Non_Fiction(Book):
 
     def __repr__(self):
         return "{title}, a {level} book on {subject}".format(title = self.title, level = self.level, subject = self.subject)
-
 
 class TomeRater:
     def __init__(self):
@@ -170,7 +165,6 @@ class TomeRater:
                 most_read = book
         return most_read
 
-
     def highest_rated_book(self):
         best_book = None
         highest_rating = 0
@@ -179,7 +173,6 @@ class TomeRater:
                 highest_rating = User.get_average_rating(self)
                 best_book = book
         return best_book
-
 
     def most_positive_user(self):
         highest_rating = 0
